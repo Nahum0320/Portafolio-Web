@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nahum Alexander Mora Soto | Portafolio</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1d4ed8;
+            --text-color: #1f2937;
+            --light-text: #4b5563;
+            --background: #f9fafb;
+            --card-bg: #ffffff;
+            --border-color: #e5e7eb;
+            --hover-color: #dbeafe;
+        }
+        
+        /* Estilos para Certificaciones */
+        .certificates-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .certificate-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .certificate-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .certificate-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--hover-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .certificate-content {
+            flex: 1;
+        }
+        
+        .certificate-title {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--text-color);
+        }
+        
+        .certificate-issuer {
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .certificate-date {
+            color: var(--light-text);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .certificate-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .certificate-link:hover {
+            text-decoration: underline;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px;
+            background-color: var(--text-color);
+        }
+
+        #hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 60px;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+
+        .hero-text h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            color: var(--light-text);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .profile-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .profile-image img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--card-bg);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: var(--text-color);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 1.2rem;
+            color: var(--light-text);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Habilidades */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .skill-category {
+            margin-bottom: 40px;
+            width: 100%;
+        }
+
+        .skill-category h3 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .skill-item {
+            background-color: var(--card-bg);
+            border-radius: 5px;
+            padding: 15px 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .skill-info {
+            flex: 1;
+        }
+
+        .skill-name {
+            font-weight: 500;
+        }
+
+        .skill-level {
+            height: 8px;
+            background-color: var(--border-color);
+            border-radius: 4px;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background-color: var(--primary-color);
+        }
+
+        /* Proyectos */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            padding: 20px;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .project-tag {
+            background-color: var(--hover-color);
+            color: var(--primary-color);
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        .project-description {
+            color: var(--light-text);
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Etiqueta de estado "En Desarrollo" */
+        .project-status {
+        background-color: #fef3c7; /* Amarillo suave */
+        color: #d97706; /* Texto ámbar */
+        padding: 5px 10px;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+
+    /* Contenedor para múltiples enlaces de repositorio */
+    .project-links {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    /* Ajustar los enlaces para que sean más compactos */
+    .project-link {
+        font-size: 0.9rem; /* Tamaño ligeramente más pequeño para que quepan dos enlaces */
+    }
+
+    /* Responsividad para pantallas pequeñas */
+    @media (max-width: 576px) {
+        .project-links {
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+
+        /* Educación y Experiencia */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: var(--border-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--card-bg);
+            border: 4px solid var(--primary-color);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+
+        /* Estilo para la lista de responsabilidades en la línea de tiempo */
+        .timeline-description ul {
+            list-style: none;
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .timeline-description li {
+            position: relative;
+            margin-bottom: 10px;
+            color: var(--light-text);
+            font-size: 0.95rem;
+        }
+
+        .timeline-description li::before {
+            content: '•';
+            position: absolute;
+            left: -20px;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::after {
+            right: -10px;
+        }
+
+        .right::after {
+            left: -10px;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-date {
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .timeline-title {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .timeline-subtitle {
+            color: var(--light-text);
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .timeline-description {
+            color: var(--light-text);
+        }
+
+        /* Estilos para el modal */
+        .modal {
+        display: none; /* Oculto por defecto */
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.5); /* Fondo semitransparente */
+        }
+
+        /* Contenido del modal */
+        .modal-content {
+        background-color: #fff;
+        margin: 5vh auto;
+        padding: 1rem;
+        border-radius: 8px;
+        width: 90vw;
+        height: 90vh;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        }
+
+        /* Botón para cerrar el modal */
+        .close {
+        color: #aaa;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        }
+
+        /* Estilos para el iframe */
+        .modal-content iframe {
+        flex: 1;
+        width: 100%;
+        height: 100%;
+        border: none;
+        }
+
+
+
+        /* Contacto */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-form {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .contact-item {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--hover-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1.3rem;
+        }
+
+        .contact-details h4 {
+            margin-bottom: 5px;
+        }
+
+        .contact-details p, .contact-details a {
+            color: var(--light-text);
+            text-decoration: none;
+        }
+
+        .contact-details a:hover {
+            color: var(--primary-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background-color: var(--hover-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-color);
+            color: white;
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-section p {
+            color: #d1d5db;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            padding-top: 20px;
+            border-top: 1px solid #374151;
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+
+        .scroll-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-text, .profile-image {
+                flex: auto;
+            }
+
+            .profile-image img {
+                width: 250px;
+                height: 250px;
+                margin-bottom: 30px;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item::after {
+                left: 21px;
+            }
+
+            .right {
+                left: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                flex-direction: column;
+                background-color: var(--card-bg);
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                transition: left 0.3s;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .hero-text h2 {
+                font-size: 1.2rem;
+            }
+
+            .profile-image img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Nahum Mora</div>
+                <ul class="nav-links">
+                    <li><a href="#hero">Inicio</a></li>
+                    <li><a href="#about">Sobre mí</a></li>
+                    <li><a href="#skills">Habilidades</a></li>
+                    <li><a href="#projects">Proyectos</a></li>
+                    <li><a href="#experience">Experiencia</a></li>
+                    <li><a href="#education">Educación</a></li>
+                    <li><a href="#certificates">Certificaciones</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+                <button class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Nahum Alexander Mora Soto</h1>
+                    <h2>Ingeniero en Sistemas en formación</h2>
+                    <p>Desarrollador de software apasionado por crear soluciones tecnológicas innovadoras y eficientes. Especializado en desarrollo web, aplicaciones empresariales y gestión de bases de datos.</p>
+                    <a href="#contact" class="cta-btn">Contáctame</a>
+                </div>
+                <div class="profile-image">
+                    <img src="/imagenes/FotoPerfil.jpg" alt="Foto de Nahum Mora">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">Sobre mí</h2>
+            <p class="section-subtitle">Soy estudiante de Ingeniería en Sistemas en la Universidad Nacional de Costa Rica, actualmente cursando el 4to año de carrera. Me apasiona el desarrollo de software y la implementación de soluciones tecnológicas para resolver problemas reales. Mi enfoque profesional combina el conocimiento técnico con habilidades de comunicación y trabajo en equipo.</p>
+            <p class="section-subtitle">Durante mi formación académica y experiencia laboral, he adquirido conocimientos en diversas tecnologías y metodologías de desarrollo. Estoy constantemente aprendiendo y buscando oportunidades para expandir mis habilidades técnicas y crecer profesionalmente.</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Habilidades Técnicas</h2>
+            <div class="skills">
+                <div class="skill-category">
+                    <h3>Avanzado</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fa-brands fa-java"></i></div>
+                            <div class="skill-info">
+                                <div class="skill-name">Java</div>
+                                <div class="skill-level">
+                                    <div class="skill-progress" style="width: 75%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fa-brands fa-html5"></i></div>
+                            <div class="skill-info">
+                                <div class="skill-name">HTML</div>
+                                <div class="skill-level">
+                                    <div class="skill-progress" style="width: 80%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
+                            <div class="skill-info">
+                                <div class="skill-name">PL/SQL</div>
+                                <div class="skill-level">
+                                    <div class="skill-progress" style="width: 75%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
+                            <div class="skill-info">
+                                <div class="skill-name">Oracle APEX</div>
+                                <div class="skill-level">
+                                    <div class="skill-progress" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fa-brands fa-wordpress"></i></div>
+                            <div class="skill-info">
+                                <div class="skill-name">WordPress</div>
+                                <div class="skill-level">
+                                    <div class="skill-progress" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Intermedio</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fa-brands fa-js"></i></div>
+                            <div class="skill-info">
+                                <div class="skill-name">JavaScript</div>
+                                <div class="skill-level">
+                                    <div class="skill-progress" style="width: 65%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fa-brands fa-css3-alt"></i></div>
+                            <div class="skill-info">
+                                <div class="skill-name">CSS</div>
+                                <div class="skill-level">
+                                    <div class="skill-progress" style="width: 65%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fa-solid fa-leaf"></i></div>
+                            <div class="skill-info">
+                                <div class="skill-name">Spring Boot</div>
+                                <div class="skill-level">
+                                    <div class="skill-progress" style="width: 65%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
+                            <div class="skill-info">
+                                <div class="skill-name">C++</div>
+                                <div class="skill-level">
+                                    <div class="skill-progress" style="width: 70%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Básico</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fa-brands fa-windows"></i></div>
+                            <div class="skill-info">
+                                <div class="skill-name">C#</div>
+                                <div class="skill-level">
+                                    <div class="skill-progress" style="width: 45%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fa-brands fa-react"></i></div>
+                            <div class="skill-info">
+                                <div class="skill-name">React</div>
+                                <div class="skill-level">
+                                    <div class="skill-progress" style="width: 40%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
+                            <div class="skill-info">
+                                <div class="skill-name">Vite</div>
+                                <div class="skill-level">
+                                    <div class="skill-progress" style="width: 35%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Proyectos Destacados</h2>
+            <div class="projects">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/imagenes/ProyectoTical.png" alt="Gestor de Órdenes de Servicio">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Gestor de Órdenes de Servicio</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">Oracle APEX</span>
+                            <span class="project-tag">PL/SQL</span>
+                        </div>
+                        <p class="project-description">Desarrollo de un sistema para la empresa Tical para gestionar órdenes de servicio en las áreas de transporte, almacenamiento y agencia de aduanas. Permite llevar un control eficiente de las órdenes recibidas por parte de los clientes.</p>
+                        <p class="project-description">Por motivos de confidencialidad, no se pueden mostrar detalles específicos del sistema.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/imagenes/PaginaWebOftanmologo.png" alt="Página Web Oftalmólogo">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Página Web para Oftalmólogo</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">WordPress</span>
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                        </div>
+                        <p class="project-description">Desarrollo de un sitio web personal para un oftalmólogo, diseñado para presentar su información profesional y servicios de manera atractiva. El sitio permite a los pacientes conocer mejor al especialista y los servicios que ofrece.</p>
+                        <a href="#" class="project-link">Visitar sitio <i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/imagenes/Screenmatch.png" alt="Screenmatch">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Screenmatch</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">Spring Boot</span>
+                            <span class="project-tag">Java</span>
+                            <span class="project-tag">API</span>
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                        </div>
+                        <p class="project-description">Aplicación web que consume una API de terceros para gestionar series. Permite buscar series, agregarlas, buscar por capítulo o valoración, y visualizar categorías y un top 5 de series recientemente agregadas. El backend está desarrollado con Java y Spring Boot, mientras que el frontend utiliza HTML, CSS y JavaScript.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Nahum0320/FrontEnd-Screenmatch.git" class="project-link">Ver Frontend <i class="fa-brands fa-github"></i></a>
+                            <a href="https://github.com/Nahum0320/BackEnd-Screenmatch.git" class="project-link">Ver Backend <i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/imagenes/RecursosHumanos.png" alt="Recursos Humanos">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Recursos Humanos</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">Spring Boot</span>
+                            <span class="project-tag">Java</span>
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">API</span>
+                        </div>
+                        <p class="project-description">Aplicación web tipo CRUD para la gestión de empleados. Permite registrar, actualizar, consultar y eliminar información de empleados, facilitando el control de recursos humanos. El backend está desarrollado con Java y Spring Boot, mientras que el frontend utiliza React.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Nahum0320/recursos_humanos_app.git" class="project-link">Ver Frontend <i class="fa-brands fa-github"></i></a>
+                            <a href="https://github.com/Nahum0320/RecursosHumanosBackEnd.git" class="project-link">Ver Backend <i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gestor de Inventario y Ventas -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/imagenes/Inventario-Ventas.png" alt="Gestor de Inventario y Ventas">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Gestor de Inventario y Ventas</h3>
+                        <span class="project-status">En Desarrollo</span>
+                        <div class="project-tags">
+                            <span class="project-tag">C#</span>
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">Vite</span>
+                            <span class="project-tag">JWT</span>
+                        </div>
+                        <p class="project-description">Sistema para el control de inventario que incluye gestión de productos, ventas, movimientos de entrada y salida de productos, y generación de reportes. El backend fue desarrollado con Visual Studio y C#, mientras que el frontend utiliza React con Vite.</p>
+                        <a href="#" class="project-link">Repositorio disponible próximamente <i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+
+                <!-- PiggyBank -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/imagenes/PiggyBank.png" alt="PiggyBank">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">PiggyBank</h3>
+                        <span class="project-status">En Desarrollo</span>
+                        <div class="project-tags">
+                            <span class="project-tag">C#</span>
+                            <span class="project-tag">.NET Framework</span>
+                            <span class="project-tag">.NET MAUI</span>
+                            <span class="project-tag">JWT</span>
+                        </div>
+                        <p class="project-description">Aplicación móvil para gestionar finanzas personales que incluye la posibilidad de crear grupos familiares para gastos compartidos. El backend fue desarrollado con Visual Studio y C# con .NET Framework, mientras que el frontend utiliza .NET MAUI.</p>
+                        <a href="#" class="project-link">Repositorio disponible próximamente <i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Experiencia Profesional</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2025</div>
+                        <h3 class="timeline-title">Desarrollador Web</h3>
+                        <h4 class="timeline-subtitle">Freelance</h4>
+                        <p class="timeline-description">Desarrollo de una página web para un oftalmólogo utilizando WordPress. El proyecto incluyó el diseño, implementación y personalización del sitio web de acuerdo a las necesidades del cliente.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024 - 2025</div>
+                        <h3 class="timeline-title">Desarrollador de Software</h3>
+                        <h4 class="timeline-subtitle">Tical</h4>
+                        <p class="timeline-description">Desarrollo de un gestor de órdenes de servicio utilizando Oracle APEX y PL/SQL. El sistema permite llevar un control detallado de las órdenes recibidas por parte de los clientes en las áreas de transporte, almacenamiento y agencia de aduanas.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Dic 2022 - Mar 2023</div>
+                        <h3 class="timeline-title">Asistente Departamento de Ingeniería</h3>
+                        <h4 class="timeline-subtitle">SARET Metamecánica S.A.</h4>
+                        <div class="timeline-description">
+                            <ul>
+                                <li>Organización de Órdenes de Trabajo</li>
+                                <li>Actualización de Base de Datos</li>
+                                <li>Control de Producción en Estructuras de Acero</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Formación Académica</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022 - Actualidad</div>
+                        <h3 class="timeline-title">Bachillerato en Ingeniería en Sistemas</h3>
+                        <h4 class="timeline-subtitle">Universidad Nacional de Costa Rica (UNA)</h4>
+                        <p class="timeline-description">Actualmente cursando el 4to año de la carrera de Ingeniería en Sistemas, con enfoque en desarrollo de software, bases de datos y arquitectura de sistemas.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022 - 2024</div>
+                        <h3 class="timeline-title">Diplomado en Programación de Aplicaciones Informáticas</h3>
+                        <h4 class="timeline-subtitle">Universidad Nacional de Costa Rica (UNA)</h4>
+                        <p class="timeline-description">Formación especializada en desarrollo de aplicaciones, algoritmos, estructuras de datos y metodologías de programación.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certificates">
+        <div class="container">
+          <h2 class="section-title">Certificaciones</h2>
+          <div class="certificates-container">
+            <!-- Primer certificado -->
+            <div class="certificate-card">
+              <div class="certificate-icon">
+                <i class="fa-solid fa-certificate"></i>
+              </div>
+              <div class="certificate-content">
+                <h3 class="certificate-title">Formación Java y Spring Framework G7 - ONE</h3>
+                <p class="certificate-issuer">Alura Latam</p>
+                <p class="certificate-date">Enero 2025</p>
+                <a href="#" class="certificate-link" onclick="openModal('aluraModal', event)">Ver credencial <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              </div>
+            </div>
+            
+            <!-- Modal para el primer certificado -->
+            <div id="aluraModal" class="modal">
+              <div class="modal-content">
+                <span class="close" onclick="closeModal('aluraModal')">&times;</span>
+                <iframe src="/imagenes/CertificadoAlura.png" frameborder="0"></iframe>
+              </div>
+            </div>
+            
+            <!-- Tercer certificado -->
+            <div class="certificate-card">
+              <div class="certificate-icon">
+                <i class="fa-solid fa-certificate"></i>
+              </div>
+              <div class="certificate-content">
+                <h3 class="certificate-title">SCRUM FOUNDATION</h3>
+                <p class="certificate-issuer">CertiProf</p>
+                <p class="certificate-date">Marzo 2023</p>
+                <a href="#" class="certificate-link" onclick="openModal('SCRUMmodal', event)">Ver credencial <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              </div>
+            </div>
+            
+            <!-- Modal para el tercer certificado -->
+            <div id="SCRUMmodal" class="modal">
+              <div class="modal-content">
+                <span class="close" onclick="closeModal('SCRUMmodal')">&times;</span>
+                <iframe src="/imagenes/SCRUM_FOUNDATION.png" frameborder="0"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contacto</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <a href="mailto:moranahum2004@gmail.com">moranahum2004@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Ubicación</h4>
+                            <p>Alajuela, Costa Rica</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Educación</h4>
+                            <p>Universidad Nacional de Costa Rica</p>
+                        </div>
+                    </div>
+                    <h3>Redes Sociales</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="formContact" action="https://formspree.io/f/xqaqggae" method="POST">
+                      <div class="form-group">
+                        <label for="name" class="form-label">Nombre</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="subject" class="form-label">Asunto</label>
+                        <input type="text" id="subject" name="subject" class="form-control" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="message" class="form-label">Mensaje</label>
+                        <textarea id="message" name="message" class="form-control" required></textarea>
+                      </div>
+                      <button type="submit" class="submit-btn">Enviar Mensaje</button>
+                    </form>
+                  </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Nahum Mora</h3>
+                    <p>Desarrollador de software especializado en aplicaciones empresariales y desarrollo web.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#hero">Inicio</a></li>
+                        <li><a href="#about">Sobre mí</a></li>
+                        <li><a href="#skills">Habilidades</a></li>
+                        <li><a href="#projects">Proyectos</a></li>
+                        <li><a href="#experience">Experiencia</a></li>
+                        <li><a href="#education">Educación</a></li>
+                        <li><a href="#certificates">Certificaciones</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p>Email: moranahum2004@gmail.com</p>
+                    <p>Ubicación: Costa Rica</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nahum Alexander Mora Soto. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="scroll-to-top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Navegación responsiva
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Cerrar menú al hacer clic en un enlace
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Scroll suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Botón de volver arriba
+        const scrollToTopBtn = document.querySelector('.scroll-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('active');
+            } else {
+                scrollToTopBtn.classList.remove('active');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Formulario de contacto
+        document.getElementById('formContact').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Aquí iría la lógica para enviar el formulario
+            // Por ahora, solo mostraremos un mensaje de confirmación
+            alert('¡Gracias por tu mensaje! Te responderé lo antes posible.');
+            this.reset();
+        });
+
+        // Animación de aparición al hacer scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.project-card, .timeline-item, .skill-item');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 50) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // Función para abrir un modal específico
+        function openModal(modalId, event) {
+        event.preventDefault(); // Previene el comportamiento por defecto del enlace
+        document.getElementById(modalId).style.display = 'block';
+        }
+
+        // Función para cerrar los modales
+        function closeModal(modalId) {
+        document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Cierra el modal si el usuario hace clic fuera del contenido
+        window.onclick = function(event) {
+        // Verificar todos los modales
+        const modals = document.querySelectorAll('.modal');
+        modals.forEach(modal => {
+            if (event.target == modal) {
+            modal.style.display = 'none';
+            }
+        });
+        }
+
+
+        // Inicialmente aplicamos estilos para la animación
+        document.querySelectorAll('.project-card, .timeline-item, .skill-item').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        });
+
+        // Ejecutamos la función al cargar la página y al hacer scroll
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+</html>
