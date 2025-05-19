@@ -560,6 +560,28 @@ section {
     z-index: 1;
 }
 
+/* Estilo para la lista de responsabilidades en la línea de tiempo */
+.timeline-description ul {
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.timeline-description li {
+    position: relative;
+    margin-bottom: 10px;
+    color: var(--light-text);
+    font-size: 0.95rem;
+}
+
+.timeline-description li::before {
+    content: '•';
+    position: absolute;
+    left: -20px;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
 .left {
     left: 0;
 }
