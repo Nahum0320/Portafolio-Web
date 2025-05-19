@@ -4,27 +4,27 @@ const navLinks = document.querySelector('.nav-links');
 // Objeto con las imágenes de cada proyecto
 const projectImages = {
     'project-1': [
-        '../imagenes/ticalModal.png',
-        '../imagenes/ticalModal2.png'
+        '/imagenes/ticalModal.png',
+        '/imagenes/ticalModal2.png'
     ],
     'project-2': [
-        '../imagenes/clinicaSeger1.png',
-        '../imagenes/clinicaSeger2.png',
-        '../imagenes/clinicaSeger3.png',
-        '../imagenes/clinicaSeger4.png'
+        '/imagenes/clinicaSeger1.png',
+        '/imagenes/clinicaSeger2.png',
+        '/imagenes/clinicaSeger3.png',
+        '/imagenes/clinicaSeger4.png'
     ],
     'project-3': [
-        '../imagenes/Screenmatch1.png',
-        '../imagenes/Screenmatch2.png',
-        '../imagenes/Screenmatch3.png'
+        '/imagenes/Screenmatch1.png',
+        '/imagenes/Screenmatch2.png',
+        '/imagenes/Screenmatch3.png'
     ],
     'project-4': [
-        '../imagenes/RecursosHumanos1.png',
-        '../imagenes/RecursosHumanos2.png',
-        '../imagenes/RecursosHumanos3.png'
+        '/imagenes/RecursosHumanos1.png',
+        '/imagenes/RecursosHumanos2.png',
+        '/imagenes/RecursosHumanos3.png'
     ],
     'project-5': [
-        '',
+        '', 
         ''
     ],
     'project-6': [
