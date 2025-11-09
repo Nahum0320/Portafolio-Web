@@ -4,8 +4,8 @@ const navLinks = document.querySelector('.nav-links');
 // Objeto con las imágenes de cada proyecto
 const projectImages = {
     'project-1': [
-        '/imagenes/ticalModal.png',
-        '/imagenes/ticalModal2.png'
+        'imagenes/ticalModal.png',
+        'imagenes/ticalModal2.png'
     ],
     'project-2': [
         'imagenes/clinicaSeger1.png',
