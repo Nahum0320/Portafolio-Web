@@ -5,7 +5,7 @@ const navLinks = document.querySelector('.nav-links');
 const projectImages = {
     'project-1': [
         'imagenes/ticalModal.png',
-        'imagenes/ticalModal2.png',
+        'imagenes/ticalModal2.png'
     ],
     'project-2': [
         'imagenes/clinicaSeger1.png',
